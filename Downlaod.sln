@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Downlaod", "Downlaod\Downlaod.csproj", "{6342E669-2B1B-4DC0-A957-4E51AE722949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Downloader", "Downloader\Downloader.csproj", "{ED6CD3E1-4773-48E6-9FA4-5C2F4189C440}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6342E669-2B1B-4DC0-A957-4E51AE722949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6342E669-2B1B-4DC0-A957-4E51AE722949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6342E669-2B1B-4DC0-A957-4E51AE722949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6342E669-2B1B-4DC0-A957-4E51AE722949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED6CD3E1-4773-48E6-9FA4-5C2F4189C440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED6CD3E1-4773-48E6-9FA4-5C2F4189C440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED6CD3E1-4773-48E6-9FA4-5C2F4189C440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED6CD3E1-4773-48E6-9FA4-5C2F4189C440}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EED7BAC-4DDC-4AEF-ACD4-DF21471E35D1}
+	EndGlobalSection
+EndGlobal
