@@ -22,6 +22,8 @@ namespace Downloader
         private int maxSpeed = 0;
         private long startByte = 0;
         private Stopwatch enlapsedTime = new Stopwatch();
+        private bool _pause;
+        private bool _stop;
 
         // File Url to Download
         public string Url { get; set; } = string.Empty;
@@ -52,7 +54,6 @@ namespace Downloader
                 maxSpeed = value;
             }
         }
-
         public TimeSpan TimeLeft
         {
             get
@@ -64,7 +65,6 @@ namespace Downloader
                 return TimeSpan.FromSeconds(leftTime);
             }
         }
-
         public TimeSpan DownloadedTime
         {
             get => enlapsedTime.Elapsed; // TimeSpan.FromMilliseconds(enlapsedTime.ElapsedMilliseconds);
@@ -72,7 +72,7 @@ namespace Downloader
 
         #endregion
 
-        public async Task Down()
+        private async Task Down()
         {
             try
             {
@@ -318,6 +318,8 @@ namespace Downloader
         }
 
 
+        #region Event
+
         public delegate void downloadChange(object sender, DownloadData size);
         public event downloadChange DownloadChange;
 
@@ -326,9 +328,9 @@ namespace Downloader
 
         public EventHandler DownloadError;
         public EventHandler StartDownload;
-        public EventHandler FinishDownload;
-        private bool _pause;
-        private bool _stop;
+        public EventHandler FinishDownload; 
+
+        #endregion
     }
 
     public struct DownloadData

@@ -7,7 +7,7 @@ namespace Downloader
     /// <summary>
     /// Class for streaming data with throttling support.
     /// </summary>
-    public class ThrottledStream : Stream
+    internal class ThrottledStream : Stream
     {
         /// <summary>
         /// A constant used to specify an infinite number of bytes that can be transferred per second.

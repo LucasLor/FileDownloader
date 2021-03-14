@@ -16,35 +16,27 @@ namespace Downlaod
         {
             InitializeComponent();
 
-            var link = "https://sv1.animeshd.org/u/uzaki-chan-wa-asobitai!/1080p/1.mp4";
-            link = @"https://ffmpeg.zeranoe.com/builds/win64/static/ffmpeg-20200814-a762fd2-win64-static.zip";
+            var link = @"https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2021-03-13-12-31/ffmpeg-n4.3.2-160-gfbb9368226-win64-gpl-4.3.zip";
 
             d = new DownloadFile()
             {
                 Url = link,
                 FilePath = "ffmpeg.zip",
-                MaxSpeed = 51200
+                MaxSpeed = 0
             };
             d.DownloadChange += D_DownloadChange;
         }
-
-        private async void DownloadStart()
-        {
-            
-
-            // Task.Run(()=> d.Start()).ConfigureAwait(true);
-            await d.StartAsync();
-        }
+        
         private void D_DownloadChange(object sender, DownloadData size)
         {
             Dispatcher.Invoke(() => tbDownloadedSize.Text = FormatFileSize(size.DownloadedSize));
             Dispatcher.Invoke(() => tbSize.Text = FormatFileSize((sender as DownloadFile).FileSize));
             Dispatcher.Invoke(() => tbSpeed.Text = FormatFileSize((sender as DownloadFile).DownloadSpeed));
             Dispatcher.Invoke(() => tbLeft.Text = (sender as DownloadFile).TimeLeft.ToString());
-            Dispatcher.Invoke(() => tbpercent.Text = (sender as DownloadFile).Progress.ToString("0.00"));
+            Dispatcher.Invoke(() => tbpercent.Text = (sender as DownloadFile).Progress.ToString("0.00") + "%");
             Dispatcher.Invoke(() => tbDownloadingTime.Text = (sender as DownloadFile).DownloadedTime.ToString());
-
         }
+
         public static String FormatFileSize(long fileSize)
         {
 
@@ -57,14 +49,18 @@ namespace Downlaod
             return (Math.Sign(fileSize) * num).ToString() + suf[place];
         }
 
+        // Start button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            //Task.Run(()=>  DownloadStart());
             DownloadStart();
-
         }
 
+        private async void DownloadStart()
+        {
+            await d.StartAsync();
+        }
+
+        // Pause Button
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             d.Pause();

@@ -6,20 +6,33 @@
         xmlns:local="clr-namespace:Downlaod"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Canvas>
-        <TextBlock Text="Download Speed:" FontSize="20" Canvas.Left="11.428" Canvas.Top="23.428"/>
-        <TextBlock Name="tbSpeed" Text="Speed" FontSize="20" Canvas.Left="185.5" Canvas.Top="24.5"/>
-        <TextBlock Text="Download Size:" FontSize="20" Canvas.Left="10.928" Canvas.Top="63.428"/>
-        <TextBlock Name="tbSize" Text="Speed" FontSize="20" Canvas.Left="185" Canvas.Top="64.5"/>
-        <TextBlock Text="Time Left:" FontSize="20" Canvas.Left="11.928" Canvas.Top="104.928"/>
-        <TextBlock Name="tbLeft" Text="Speed" FontSize="20" Canvas.Left="186" Canvas.Top="106"/>
-        <TextBlock FontSize="20" Canvas.Left="12.428" Canvas.Top="142.928"><Run Text="Downloaded Size"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
-        <TextBlock Name="tbDownloadedSize" Text="Speed" FontSize="20" Canvas.Left="186.5" Canvas.Top="144"/>
-        <Button Content="Start" FontSize="30" Click="Button_Click" Canvas.Left="33.383" Canvas.Top="269.55"/>
-        <Button Content="Pause" FontSize="30" Click="Button_Click_1" Canvas.Left="138.483" Canvas.Top="270.786"/>
-        <TextBlock FontSize="20" Canvas.Left="11.19" Canvas.Top="182.494"><Run Text="Progress"/><Run Text=":"/><LineBreak/><Run/></TextBlock>
-        <TextBlock x:Name="tbpercent" Text="Speed" FontSize="20" Canvas.Left="185.262" Canvas.Top="183.566"/>
-        <TextBlock Text="Download Run Time:" FontSize="20" Canvas.Left="11.428" Canvas.Top="216.318"/>
-        <TextBlock x:Name="tbDownloadingTime" Text="Speed" FontSize="20" Canvas.Left="207.756" Canvas.Top="217.39"/>
-    </Canvas>
+    <StackPanel>
+        <UniformGrid Columns="2" Rows="6">
+            <TextBlock Text="Download Speed:" FontSize="20" Height="40" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock Name="tbSpeed" Text="Speed" FontSize="20" Grid.Column="1" Grid.Row="0"/>
+
+            <TextBlock Text="Download Size:" FontSize="20" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock Name="tbSize" Text="Download Size" FontSize="20" Grid.Column="1" Grid.Row="1"/>
+
+            <TextBlock Text="Time Left:" FontSize="20" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock Name="tbLeft" Text="Time Left" FontSize="20" Grid.Column="1" Grid.Row="2"/>
+            
+            <TextBlock FontSize="20" Canvas.Left="12.428" Text="Downloaded Size:" Grid.Column="0" Grid.Row="3" />
+            <TextBlock Name="tbDownloadedSize" Text="Size" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+
+            <TextBlock Text="Download Run Time:" FontSize="20" Grid.Column="0" Grid.Row="4"/>
+            <TextBlock x:Name="tbDownloadingTime" Text="Run Time" FontSize="20" Grid.Column="1" Grid.Row="4"/>
+
+            <TextBlock FontSize="20" Canvas.Left="11.19" Text="Progress" Grid.Column="0" Grid.Row="5"/>
+            <TextBlock x:Name="tbpercent" Text="Percent" FontSize="20" Grid.Column="1" Grid.Row="5"/>
+                         
+        </UniformGrid>
+        
+        <UniformGrid Columns="2">
+            <Button Content="Start" FontSize="30" Click="Button_Click" Grid.Column="0" Grid.Row="6"/>
+            <Button Content="Pause" FontSize="30" Click="Button_Click_1" Grid.Column="1" Grid.Row="6"/>
+        </UniformGrid>
+
+        
+    </StackPanel>
 </Window>
